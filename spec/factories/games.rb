@@ -1,7 +1,10 @@
 FactoryGirl.define do
   factory :game do
     nickname "MyString"
-    players 4
+    player1 "Jonos"
+    player2 "Peter"
+    player3 "Pigpig"
+    player4 "Julio"
   end
 
 end

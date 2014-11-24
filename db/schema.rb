@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(version: 20141124102438) do
 
   create_table "games", force: true do |t|
     t.string   "nickname"
-    t.integer  "players"
+    t.string   "player1"
+    t.string   "player2"
+    t.string   "player3"
+    t.string   "player4"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
