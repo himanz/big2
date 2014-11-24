@@ -35,6 +35,9 @@ RSpec.describe GamesController, :type => :controller do
   		expect(assigns(:game)).to be_a_new(Game)
   	end
 
-  	it "renders the new template"
+  	it "renders the new template" do
+  		get :new
+  		expect(response).to render_template :new
+  	end
   end
 end
