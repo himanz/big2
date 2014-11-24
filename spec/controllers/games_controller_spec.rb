@@ -22,6 +22,10 @@ RSpec.describe GamesController, :type => :controller do
   		expect(assigns(:game)).to eq game
   	end
 
-  	it "renders the show template"
+  	it "renders the show template" do
+  		game = create(:game)
+  		get :show, id: game
+  		expect(response).to render_template :show
+  	end
   end
 end
