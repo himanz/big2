@@ -14,4 +14,14 @@ RSpec.describe GamesController, :type => :controller do
   		expect(response).to render_template :index
   	end
   end
+
+  describe 'GET #show' do
+  	it "returns the requested game to @game" do
+  		game = create(:game)
+  		get :show, id: game
+  		expect(assigns(:game)).to eq game
+  	end
+
+  	it "renders the show template"
+  end
 end
