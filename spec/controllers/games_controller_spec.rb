@@ -9,6 +9,9 @@ RSpec.describe GamesController, :type => :controller do
   		expect(assigns(:games)).to match_array([game1, game2])
   	end
 
-  	it "renders the :index view"
+  	it "renders the :index view" do
+  		get :index
+  		expect(response).to render_template :index
+  	end
   end
 end
