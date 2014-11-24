@@ -8,6 +8,10 @@ class GamesController < ApplicationController
 	def show
 	end
 
+	def new
+		@game = Game.new
+	end
+
 	private
   def set_game
   	@game = Game.find(params[:id])
