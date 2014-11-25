@@ -34,7 +34,8 @@ RSpec.describe HandsController, :type => :controller do
 
   describe 'GET #edit' do
   	before do
-  		@hand = create(:hand)
+  		@game = create(:game)
+  		@hand = create(:hand, game_id: @game.id)
   		get :edit, id: @hand, game_id: @hand.game_id
   	end
 
@@ -98,9 +99,9 @@ RSpec.describe HandsController, :type => :controller do
 	  		expect(@hand.score2).to eq 1
   	  end
 
-      it "redirects to the updated hand" do
+      it "redirects to game" do
       	patch :update, id: @hand, game_id: @game, hand: attributes_for(:hand)
-      	expect(response).to redirect_to game_hand_path(@hand, @game)
+      	expect(response).to redirect_to game_path(@game)
       end
   	end
   end

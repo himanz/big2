@@ -21,4 +21,22 @@ class Game < ActiveRecord::Base
     	query_hands.sum(:score4)
     end
 	end
+
+	def check_no_name
+		if player1 == nil
+			self.player1 = "Player 1"
+		end
+
+		if player2 == nil
+			self.player2 = "Player 2"
+		end
+
+		if player3 == nil
+			self.player3 = "Player 3"
+		end
+
+		if player4 == nil
+			self.player4 = "Player 4"
+		end
+	end
 end
