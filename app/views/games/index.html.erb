@@ -1,0 +1,10 @@
+<h1 class="game-title ">List of Games</h1>
+<% @games.each do |game| %>
+  <div class="game-link-container">
+  <% if game.nickname %>
+    <%= link_to game.nickname, game %>
+  <% else %>
+    <%= link_to "Game " + game.id.to_s, game %>
+  <% end %>
+  </div>
+<% end %>

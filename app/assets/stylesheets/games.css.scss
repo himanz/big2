@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.create-game-title {
+.game-title {
 	text-align: center;
 	font-size: 3em;
 	margin-bottom: 30px;
@@ -11,4 +11,9 @@
 .input-player {
 	margin: auto;
 	margin-bottom: 30px;
+}
+
+.game-link-container {
+	text-align: center;
+	font-size: 1.5em;
 }
