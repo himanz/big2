@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20141124102438) do
 
   create_table "games", force: true do |t|
     t.string   "nickname"
-    t.string   "player1"
-    t.string   "player2"
-    t.string   "player3"
-    t.string   "player4"
+    t.string   "player1",    default: "Player 1"
+    t.string   "player2",    default: "Player 2"
+    t.string   "player3",    default: "Player 3"
+    t.string   "player4",    default: "Player 4"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
