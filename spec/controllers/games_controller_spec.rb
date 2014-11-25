@@ -40,4 +40,14 @@ RSpec.describe GamesController, :type => :controller do
   		expect(response).to render_template :new
   	end
   end
+
+  describe 'POST #create' do
+  	context "with valid attributes" do
+  		it "saves the new game to the database" do
+  			expect{
+  				post :create, game: attributes_for(:game)
+  			}.to change(Game, :count).by(1)
+  		end
+  	end
+  end
 end
