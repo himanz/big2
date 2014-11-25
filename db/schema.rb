@@ -18,19 +18,19 @@ ActiveRecord::Schema.define(version: 20141125021836) do
 
   create_table "games", force: true do |t|
     t.string   "nickname"
-    t.string   "player1",    default: "Player 1"
-    t.string   "player2",    default: "Player 2"
-    t.string   "player3",    default: "Player 3"
-    t.string   "player4",    default: "Player 4"
+    t.string   "player1"
+    t.string   "player2"
+    t.string   "player3"
+    t.string   "player4"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "hands", force: true do |t|
-    t.integer  "score1",     default: 0
-    t.integer  "score2",     default: 0
-    t.integer  "score3",     default: 0
-    t.integer  "score4",     default: 0
+    t.integer  "score1"
+    t.integer  "score2"
+    t.integer  "score3"
+    t.integer  "score4"
     t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,0 +1,15 @@
+<%= form_for @game do |f| %>
+  <%= f.label :player_1 %>
+  <%= f.text_field :player1 %>
+  <br>
+  <%= f.label :player_2 %>
+  <%= f.text_field :player2 %>
+  <br>
+  <%= f.label :player_3 %>
+  <%= f.text_field :player3 %>
+  <br>
+  <%= f.label :player_4 %>
+  <%= f.text_field :player4 %>
+  <br>
+  <%= f.submit "Create Game" %>
+<% end %>
