@@ -12,11 +12,11 @@ class HandsController < ApplicationController
 	def create
 		@hand = Hand.new(hand_params)
 		@hand.game_id = @game.id
-		@hand.check_no_score
+		@hand.update_score
 		if @hand.save
 			redirect_to @game, notice: "Hand was successfully added"
 		else
-			redirect_to game_path(@game), alert: "Failed to update. Make sure the hand score is between 0-13"
+			redirect_to @game, alert: "Failed to update. Make sure the hand score is between 0-13"
 		end
 	end
 
@@ -42,6 +42,6 @@ class HandsController < ApplicationController
 	end
 
 	def hand_params
-		params.require(:hand).permit(:score1, :score2, :score3, :score4)
+		params.require(:hand).permit(:score1, :score2, :score3, :score4, :game_id)
 	end
 end

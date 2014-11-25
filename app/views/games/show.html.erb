@@ -3,23 +3,23 @@
 <%= form_for [@game, @hand] do |f| %>
 	  <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score1, placeholder: "#{@game.player1} Score", class: "form-control no-border-radius"  %>
+	  <%= f.number_field :score1, placeholder: "#{@game.player1} Score", min: 0, max: 13, step: 1, class: "form-control no-border-radius"  %>
   </div>
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score2, placeholder: "#{@game.player2} Score", class: "form-control no-border-radius"  %>
+	  <%= f.number_field :score2, placeholder: "#{@game.player2} Score", min: 0, max: 13, step: 1, class: "form-control no-border-radius"  %>
   </div>
 
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score3, placeholder: "#{@game.player3} Score", class: "form-control no-border-radius"  %>
+	  <%= f.number_field :score3, placeholder: "#{@game.player3} Score", min: 0, max: 13, step: 1, class: "form-control no-border-radius"  %>
   </div>
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score4, placeholder: "#{@game.player4} Score", class: "form-control no-border-radius"  %>
+	  <%= f.number_field :score4, placeholder: "#{@game.player4} Score", min: 0, max: 13, step: 1, class: "form-control no-border-radius"  %>
   </div>
   
   <div class="input-group col-xs-10 col-sm-7 col-xs-offset-4 col-sm-offset-5">
