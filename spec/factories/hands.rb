@@ -16,6 +16,10 @@ FactoryGirl.define do
 		factory :hand_for_game2 do
 			game_id 2
 		end
+
+		factory :hand_invalid do
+			score1 14
+		end
   end
 
 end

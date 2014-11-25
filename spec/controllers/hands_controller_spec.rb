@@ -49,5 +49,18 @@ RSpec.describe HandsController, :type => :controller do
 	    	expect(response).to redirect_to @game
 	    end
   	end
+
+  	context "with invalid attributes" do
+  		it "does not save the new hand in the database" do
+  			expect{
+    			post :create, game_id: @game, hand: attributes_for(:hand_invalid)
+        }.to_not change(Hand, :count) 
+  		end
+
+  		it "re-renders the :new template" do
+  			post :create, game_id: @game, hand: attributes_for(:hand_invalid)
+  			expect(response).to render_template :new
+  		end
+  	end
   end
 end
