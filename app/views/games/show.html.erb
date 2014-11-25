@@ -1,0 +1,25 @@
+<h1 class="game-title "><%= @game.nickname ? "#{@game.nickname}" : "Game #{@game.id}"%></h1>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    	<tr>
+    		<th>Hand #</th>
+    		<th><%= @game.player1 ? "#{@game.player1}" : "Player 1" %></th>
+    		<th><%= @game.player2 ? "#{@game.player2}" : "Player 2" %></th>
+    		<th><%= @game.player3 ? "#{@game.player3}" : "Player 3" %></th>
+    		<th><%= @game.player4 ? "#{@game.player4}" : "Player 4" %></th>
+    	</tr>
+    </thead>
+    <tbody>
+    	<% @hands.each do |hand| %>
+    	  <tr>
+          <td><%= "#{hand.id}" %></td>
+          <td><%= "#{hand.score1}"%></td>
+          <td><%= "#{hand.score2}"%></td>
+          <td><%= "#{hand.score3}"%></td>
+          <td><%= "#{hand.score4}"%></td>
+    	  </tr>
+    	<% end %>
+    </tbody>
+  </table>
+</div>
