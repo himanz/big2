@@ -48,7 +48,7 @@ RSpec.describe HandsController, :type => :controller do
   end
 
   describe "POST #create" do
-  	before do
+  	before :each do
   		@game = create(:game)
   	end
 
@@ -76,6 +76,32 @@ RSpec.describe HandsController, :type => :controller do
   			post :create, game_id: @game, hand: attributes_for(:hand_invalid)
   			expect(response).to render_template :new
   		end
+  	end
+  end
+
+  describe 'Patch #update' do
+  	before :each do
+  		@game = create(:game)
+  		@hand = create(:hand, game_id: @game)
+  	end
+
+  	it "located the requested @hand" do
+  		patch :update, id: @hand, game_id: @game, hand: attributes_for(:hand)
+  		expect(assigns(:hand)).to eq @hand
+  	end
+    
+    context "with valid attributes" do
+    	it "changes @hand's attributes" do
+	  		patch :update, id: @hand, game_id: @game, hand: attributes_for(:hand, score1: 2, score2: 1)
+	  		@hand.reload
+	  		expect(@hand.score1).to eq 2
+	  		expect(@hand.score2).to eq 1
+  	  end
+
+      it "redirects to the updated hand" do
+      	patch :update, id: @hand, game_id: @game, hand: attributes_for(:hand)
+      	expect(response).to redirect_to game_hand_path(@hand, @game)
+      end
   	end
   end
 end

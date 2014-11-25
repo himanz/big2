@@ -1,6 +1,6 @@
 class HandsController < ApplicationController
-	before_action :set_hand, only: [:show, :edit]
-  before_action :set_game, only: [:create]
+	before_action :set_hand, only: [:show, :edit, :update]
+  before_action :set_game, only: [:create, :update]
 
 	def show
 	end
@@ -20,6 +20,14 @@ class HandsController < ApplicationController
 	end
 
 	def edit
+	end
+
+	def update
+    if @hand.update(hand_params)
+    	redirect_to game_hand_path(@hand, @game)
+    else
+    	render :edit
+    end
 	end
 
 	private
