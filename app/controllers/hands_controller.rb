@@ -12,6 +12,7 @@ class HandsController < ApplicationController
 	def create
 		@hand = Hand.new(hand_params)
 		@hand.game_id = @game.id
+		@hand.check_no_score
 		if @hand.save
 			redirect_to @game
 		else

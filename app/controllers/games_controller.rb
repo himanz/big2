@@ -7,6 +7,7 @@ class GamesController < ApplicationController
 
 	def show
 		@hands = @game.query_hands
+		@hand = Hand.new
 	end
 
 	def new
