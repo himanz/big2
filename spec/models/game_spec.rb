@@ -17,4 +17,8 @@ RSpec.describe Game, :type => :model do
   	expect(game.errors[:player1].size).to eq(1)
   end
 
+  it "calculates total score" do
+  	game = create(:game_with_hands)
+  	expect(game.total_score(1)).to eq(15)
+  end
 end
