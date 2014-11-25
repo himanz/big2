@@ -26,5 +26,9 @@ RSpec.describe HandsController, :type => :controller do
   	it "assigns a new hand to @hand" do
   		expect(assigns(:hand)).to be_a_new(Hand)
   	end
+
+  	it "renders the :new template" do
+  		expect(response).to render_template :new
+  	end
   end
 end
