@@ -105,4 +105,18 @@ RSpec.describe HandsController, :type => :controller do
       end
   	end
   end
+
+  describe "Delete #destroy" do
+  	before :each do
+  		@game = create(:game)
+      @hand = create(:hand, game_id: @game.id)
+      @hand2 = create(:hand2, game_id: @game.id)
+  	end
+
+  	it "deletes the hand" do
+  		expect {
+  			delete :destroy, game_id: @game, id: @hand
+  		}.to change(Hand, :count).by(-1)
+  	end
+  end
 end

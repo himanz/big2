@@ -1,6 +1,6 @@
 class HandsController < ApplicationController
-	before_action :set_hand, only: [:show, :edit, :update]
-  before_action :set_game, only: [:create, :update, :edit]
+	before_action :set_hand, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:create, :update, :edit, :destroy]
 
 	def show
 	end
@@ -29,6 +29,14 @@ class HandsController < ApplicationController
     else
     	redirect_to edit_game_hand_path(@game, @hand), alert: "Incorrect field submission"
     end
+	end
+
+	def destroy
+		if @hand.destroy
+			redirect_to @game, notice: "Hand was successfully deleted"
+		else
+			redirect_to edit_game_hand_path(@game, @hand), alert: "Hand failed to delete"
+		end
 	end
 
 	private
