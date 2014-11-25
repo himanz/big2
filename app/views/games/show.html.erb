@@ -44,7 +44,7 @@
     <tbody>
     	<% @hands.each do |hand| %>
     	  <tr>
-          <td><%= "#{hand.id}" %></td>
+          <td><%= link_to "#{hand.id}", game_hand_path(@game, hand) %></td>
           <td><%= "#{hand.score1}"%></td>
           <td><%= "#{hand.score2}"%></td>
           <td><%= "#{hand.score3}"%></td>
