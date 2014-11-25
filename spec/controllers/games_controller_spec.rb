@@ -48,6 +48,11 @@ RSpec.describe GamesController, :type => :controller do
   				post :create, game: attributes_for(:game)
   			}.to change(Game, :count).by(1)
   		end
+
+  		it "redirects to game #show" do
+  			post :create, game: attributes_for(:game)
+  			expect(response).to redirect_to game_path(assigns(:game))
+  		end
   	end
   end
 end
