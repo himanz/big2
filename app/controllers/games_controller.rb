@@ -18,9 +18,9 @@ class GamesController < ApplicationController
 		@game = Game.new(game_params)
 		@game.check_no_player_name
 		if @game.save
-			redirect_to @game
+			redirect_to @game, notice: "Game was successfully created"
 		else
-			render :new
+			render :new, alert: "Check yo fields"
 		end
 	end
 

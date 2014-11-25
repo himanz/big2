@@ -14,9 +14,9 @@ class HandsController < ApplicationController
 		@hand.game_id = @game.id
 		@hand.check_no_score
 		if @hand.save
-			redirect_to @game
+			redirect_to @game, notice: "Hand was successfully added"
 		else
-			render :new
+			redirect_to game_path(@game), alert: "Failed to update. Make sure the hand score is between 0-13"
 		end
 	end
 
@@ -25,9 +25,9 @@ class HandsController < ApplicationController
 
 	def update
     if @hand.update(hand_params)
-    	redirect_to game_path(@game)
+    	redirect_to game_path(@game), notice: "Hand successfully changed"
     else
-    	render :edit
+    	redirect_to edit_game_hand_path(@game, @hand), alert: "Incorrect field submission"
     end
 	end
 
