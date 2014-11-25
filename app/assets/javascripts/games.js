@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  $(".total-button").click(function() {
+  $(".total-table").hide();
+
+  $(".total-button").on("click", function() {
 		$(".total-table").toggle();
 	});
 });
