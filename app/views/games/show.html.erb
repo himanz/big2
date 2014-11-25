@@ -42,14 +42,17 @@
     	</tr>
     </thead>
     <tbody>
+      <% hand_count = 1 %>
     	<% @hands.each do |hand| %>
+        
     	  <tr>
-          <td><%= link_to "#{hand.id}", edit_game_hand_path(@game, hand) %></td>
+          <td><%= link_to "#{hand_count}", edit_game_hand_path(@game, hand) %></td>
           <td><%= "#{hand.score1}"%></td>
           <td><%= "#{hand.score2}"%></td>
           <td><%= "#{hand.score3}"%></td>
           <td><%= "#{hand.score4}"%></td>
     	  </tr>
+        <% hand_count += 1 %>
     	<% end %>
     </tbody>
   </table>
