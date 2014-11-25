@@ -25,7 +25,7 @@ class HandsController < ApplicationController
 
 	def update
     if @hand.update(hand_params)
-    	redirect_to game_hand_path(@hand, @game)
+    	redirect_to game_path(@game)
     else
     	render :edit
     end
