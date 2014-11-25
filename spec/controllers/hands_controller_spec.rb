@@ -16,4 +16,15 @@ RSpec.describe HandsController, :type => :controller do
   		expect(response).to render_template :show
   	end
   end
+
+  describe 'GET #new' do
+  	before do
+  		@game = create(:game)
+  		get :new, game_id: @game
+  	end
+
+  	it "assigns a new hand to @hand" do
+  		expect(assigns(:hand)).to be_a_new(Hand)
+  	end
+  end
 end

@@ -4,6 +4,10 @@ class HandsController < ApplicationController
 	def show
 	end
 
+	def new
+		@hand = Hand.new
+	end
+
 	private
 
 	def set_hand
