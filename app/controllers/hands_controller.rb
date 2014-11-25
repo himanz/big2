@@ -1,5 +1,5 @@
 class HandsController < ApplicationController
-	before_action :set_hand, only: [:show]
+	before_action :set_hand, only: [:show, :edit]
   before_action :set_game, only: [:create]
 
 	def show
@@ -17,6 +17,9 @@ class HandsController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def edit
 	end
 
 	private

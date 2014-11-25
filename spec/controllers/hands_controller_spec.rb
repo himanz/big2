@@ -32,6 +32,21 @@ RSpec.describe HandsController, :type => :controller do
   	end
   end
 
+  describe 'GET #edit' do
+  	before do
+  		@hand = create(:hand)
+  		get :edit, id: @hand, game_id: @hand.game_id
+  	end
+
+  	it "assigns the requested hand to @hand" do
+  		expect(assigns(:hand)).to eq @hand
+  	end
+
+  	it "renders the :edit template" do
+  		expect(response).to render_template :edit
+  	end
+  end
+
   describe "POST #create" do
   	before do
   		@game = create(:game)
