@@ -31,4 +31,23 @@ RSpec.describe HandsController, :type => :controller do
   		expect(response).to render_template :new
   	end
   end
+
+  describe "POST #create" do
+  	before do
+  		@game = create(:game)
+  	end
+
+  	context "with valid attributes" do
+  		it "saves the new hand in the database" do
+	      expect{
+	      	post :create, game_id: @game, hand: attributes_for(:hand)
+	      }.to change(Hand, :count).by(1)
+	    end
+
+	    it "redirects to game#show" do
+	    	post :create, game_id: @game, hand: attributes_for(:hand)
+	    	expect(response).to redirect_to @game
+	    end
+  	end
+  end
 end
