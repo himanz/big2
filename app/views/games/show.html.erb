@@ -58,27 +58,25 @@
 <div class="table-responsive total-table">
   <table class="table table-bordered">
   	<caption class="total-title">Total Score</caption>
-  	<div class="total-table-body">
-	    <thead>
-	    	<tr>
-	    		<th><%= @game.player1 ? "#{@game.player1}" : "Player 1" %></th>
-	    		<th><%= @game.player2 ? "#{@game.player2}" : "Player 2" %></th>
-	    		<th><%= @game.player3 ? "#{@game.player3}" : "Player 3" %></th>
-	    		<th><%= @game.player4 ? "#{@game.player4}" : "Player 4" %></th>
-	    	</tr>
-	    </thead>
-	    <tbody>
-	    	<tr>
-	    		<th><%= @game.total_score(1) %></th>
-	    		<th><%= @game.total_score(2) %></th>
-	    		<th><%= @game.total_score(3) %></th>
-	    		<th><%= @game.total_score(4) %></th>
-	    	</tr>
-	    </tbody>
-    </div>
+    <thead>
+    	<tr>
+    		<th><%= @game.player1 ? "#{@game.player1}" : "Player 1" %></th>
+    		<th><%= @game.player2 ? "#{@game.player2}" : "Player 2" %></th>
+    		<th><%= @game.player3 ? "#{@game.player3}" : "Player 3" %></th>
+    		<th><%= @game.player4 ? "#{@game.player4}" : "Player 4" %></th>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<th><%= @game.total_score(1) %></th>
+    		<th><%= @game.total_score(2) %></th>
+    		<th><%= @game.total_score(3) %></th>
+    		<th><%= @game.total_score(4) %></th>
+    	</tr>
+    </tbody>
   </table>
 </div>
 
 <div class="input-group col-xs-10 col-sm-7 col-xs-offset-4 col-sm-offset-5">
-  <%= button_tag "Show Total", class: "btn btn-lg btn-primary total-button" %>
+  <%= button_tag "Toggle Total", class: "btn btn-lg btn-primary total-button" %>
 </div>
