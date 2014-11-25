@@ -1,15 +1,32 @@
 <%= form_for @game do |f| %>
-  <%= f.label :player_1 %>
-  <%= f.text_field :player1 %>
-  <br>
-  <%= f.label :player_2 %>
-  <%= f.text_field :player2 %>
-  <br>
-  <%= f.label :player_3 %>
-  <%= f.text_field :player3 %>
-  <br>
-  <%= f.label :player_4 %>
-  <%= f.text_field :player4 %>
-  <br>
-  <%= f.submit "Create Game" %>
+	
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+	  <%= f.text_field :player1, placeholder: "Player 1", class: "form-control no-border-radius"  %>
+  </div>
+
+
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+	  <%= f.text_field :player2, placeholder: "Player 2", class: "form-control no-border-radius"  %>
+  </div>
+
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+	  <%= f.text_field :player3, placeholder: "Player 3", class: "form-control no-border-radius"  %>
+  </div>
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<span class="input-group-addon"><i class="fa fa-user"></i></span>
+	  <%= f.text_field :player4, placeholder: "Player 4", class: "form-control no-border-radius"  %>
+  </div>
+  
+  <div class="input-group col-xs-10 col-sm-7 col-xs-offset-4 col-sm-offset-5">
+  <span class="input-group-btn">
+    <%= f.submit "Create Game", class: "btn btn-lg btn-success create-game-button" %>
+  </span>
+</div>
+
 <% end %>
