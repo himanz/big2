@@ -2,7 +2,7 @@
 <h3 class="page-description">(Most recent first)</h3>
 <% @games.each do |game| %>
   <div class="game-link-container">
-  <% if game.nickname %>
+  <% if game.nickname != "" %>
     <%= link_to game.nickname, game %>
   <% else %>
     <%= link_to "Game " + game.id.to_s, game %>

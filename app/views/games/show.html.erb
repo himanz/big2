@@ -3,23 +3,23 @@
 <%= form_for [@game, @hand] do |f| %>
 	  <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score1, placeholder: "Player 1 Score", class: "form-control no-border-radius"  %>
+	  <%= f.text_field :score1, placeholder: "#{@game.player1} Score", class: "form-control no-border-radius"  %>
   </div>
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score2, placeholder: "Player 2 Score", class: "form-control no-border-radius"  %>
+	  <%= f.text_field :score2, placeholder: "#{@game.player2} Score", class: "form-control no-border-radius"  %>
   </div>
 
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score3, placeholder: "Player 3 Score", class: "form-control no-border-radius"  %>
+	  <%= f.text_field :score3, placeholder: "#{@game.player3} Score", class: "form-control no-border-radius"  %>
   </div>
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-	  <%= f.text_field :score4, placeholder: "Player 4 Score", class: "form-control no-border-radius"  %>
+	  <%= f.text_field :score4, placeholder: "#{@game.player4} Score", class: "form-control no-border-radius"  %>
   </div>
   
   <div class="input-group col-xs-10 col-sm-7 col-xs-offset-4 col-sm-offset-5">
@@ -35,10 +35,10 @@
     <thead>
     	<tr>
     		<th>Hand #</th>
-    		<th><%= @game.player1 ? "#{@game.player1}" : "Player 1" %></th>
-    		<th><%= @game.player2 ? "#{@game.player2}" : "Player 2" %></th>
-    		<th><%= @game.player3 ? "#{@game.player3}" : "Player 3" %></th>
-    		<th><%= @game.player4 ? "#{@game.player4}" : "Player 4" %></th>
+    		<th><%= @game.player1 %></th>
+    		<th><%= @game.player2 %></th>
+    		<th><%= @game.player3 %></th>
+    		<th><%= @game.player4 %></th>
     	</tr>
     </thead>
     <tbody>

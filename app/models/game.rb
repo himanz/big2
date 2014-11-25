@@ -22,20 +22,20 @@ class Game < ActiveRecord::Base
     end
 	end
 
-	def check_no_name
-		if player1 == nil
+	def check_no_player_name
+		if player1 == ""
 			self.player1 = "Player 1"
 		end
 
-		if player2 == nil
+		if player2 == ""
 			self.player2 = "Player 2"
 		end
 
-		if player3 == nil
+		if player3 == ""
 			self.player3 = "Player 3"
 		end
 
-		if player4 == nil
+		if player4 == ""
 			self.player4 = "Player 4"
 		end
 	end
