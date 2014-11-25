@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 	before_action :set_game, only: [:show]
 
 	def index
-		@games = Game.all
+		@games = Game.all.sort_by_recent
 	end
 
 	def show
