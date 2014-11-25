@@ -27,6 +27,14 @@ RSpec.describe GamesController, :type => :controller do
   		get :show, id: game
   		expect(response).to render_template :show
   	end
+
+  	it "grabs the requested hands" do
+  		game = create(:game)
+  		hand1 = create(:hand, game_id: game.id)
+  		hand2 = create(:hand2, game_id: game.id)
+  		get :show, id: game
+  		expect(assigns(:hands)).to eq([hand1, hand2])
+  	end
   end
 
   describe 'GET #new' do
