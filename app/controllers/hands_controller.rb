@@ -1,6 +1,6 @@
 class HandsController < ApplicationController
 	before_action :set_hand, only: [:show, :edit, :update]
-  before_action :set_game, only: [:create, :update]
+  before_action :set_game, only: [:create, :update, :edit]
 
 	def show
 	end

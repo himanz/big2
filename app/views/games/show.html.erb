@@ -29,7 +29,7 @@
   </div>
 <% end %>
 
-
+<p>Click on hand # to edit it</p>
 <div class="table-responsive">
   <table class="table table-bordered table-striped">
     <thead>
@@ -44,7 +44,7 @@
     <tbody>
     	<% @hands.each do |hand| %>
     	  <tr>
-          <td><%= link_to "#{hand.id}", game_hand_path(@game, hand) %></td>
+          <td><%= link_to "#{hand.id}", edit_game_hand_path(@game, hand) %></td>
           <td><%= "#{hand.score1}"%></td>
           <td><%= "#{hand.score2}"%></td>
           <td><%= "#{hand.score3}"%></td>

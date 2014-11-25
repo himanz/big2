@@ -1,0 +1,28 @@
+<%= form_for [@game, @hand] do |f| %>
+	  <div class="input-group col-xs-10 col-sm-7 input-player">
+	  	<%= f.label "#{@game.player1}" %>
+		  <%= f.text_field :score1, placeholder: "Player 1 Score", class: "form-control no-border-radius"  %>
+	  </div>
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<%= f.label "#{@game.player2}" %>
+	  <%= f.text_field :score2, placeholder: "Player 2 Score", class: "form-control no-border-radius"  %>
+  </div>
+
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<%= f.label "#{@game.player3}" %>
+	  <%= f.text_field :score3, placeholder: "Player 3 Score", class: "form-control no-border-radius"  %>
+  </div>
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<%= f.label "#{@game.player4}" %>
+	  <%= f.text_field :score4, placeholder: "Player 4 Score", class: "form-control no-border-radius"  %>
+  </div>
+  
+  <div class="input-group col-xs-10 col-sm-7 col-xs-offset-4 col-sm-offset-5">
+	  <span class="input-group-btn">
+	    <%= f.submit "Submit Hand", class: "btn btn-lg btn-success create-hand-button" %>
+	  </span>
+  </div>
+<% end %>

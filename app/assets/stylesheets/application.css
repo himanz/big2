@@ -17,3 +17,14 @@
 body {
 	padding-top: 50px;
 }
+
+.game-title {
+	text-align: center;
+	font-size: 3em;
+	margin-bottom: 30px;
+}
+
+.input-player {
+	margin: auto;
+	margin-bottom: 30px;
+}
