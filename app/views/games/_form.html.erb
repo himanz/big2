@@ -1,11 +1,14 @@
 <%= form_for @game do |f| %>
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<span class="input-group-addon"><i class="fa fa-heart"></i></span>
+	  <%= f.text_field :nickname, placeholder: "Nickname for Game (Optional)", class: "form-control no-border-radius"  %>
+  </div>
 	
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-user"></i></span>
 	  <%= f.text_field :player1, placeholder: "Player 1", class: "form-control no-border-radius"  %>
   </div>
-
-
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-user"></i></span>
