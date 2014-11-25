@@ -5,6 +5,7 @@ class CreateHands < ActiveRecord::Migration
       t.integer :score2, default: 0
       t.integer :score3, default: 0
       t.integer :score4, default: 0
+      t.integer :game_id
 
       t.timestamps
     end

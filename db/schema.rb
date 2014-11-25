@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141125021836) do
     t.integer  "score2",     default: 0
     t.integer  "score3",     default: 0
     t.integer  "score4",     default: 0
+    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
