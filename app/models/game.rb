@@ -59,7 +59,8 @@ class Game < ActiveRecord::Base
           current_player_owe.push(0)
         else
         	if current_player_score > score_array[j]
-        		current_player_owe.push(current_player_score - score_array[j])
+            converted_score = (current_player_score - score_array[j]) * self.amount
+        		current_player_owe.push(converted_score)
         	else
         	  current_player_owe.push(0) 
         	end
