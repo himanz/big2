@@ -25,7 +25,7 @@ class Game < ActiveRecord::Base
 	def total_score_all_players
 		score_array = []
 		for i in 1..4
-			score_array << total_score(i)
+			score_array.push(total_score(i))
 		end
 		score_array
 	end
@@ -46,5 +46,27 @@ class Game < ActiveRecord::Base
 		if player4 == ""
 			self.player4 = "Player 4"
 		end
+	end
+
+	def calculate_owe
+		score_array = total_score_all_players
+		final_owe = []
+		for i in 0..score_array.length-1
+			current_player_owe = []
+			current_player_score = score_array[i]
+      for j in 0..score_array.length-1
+        if j == i
+          current_player_owe.push(0)
+        else
+        	if current_player_score > score_array[j]
+        		current_player_owe.push(current_player_score - score_array[j])
+        	else
+        	  current_player_owe.push(0) 
+        	end
+        end 
+      end
+      final_owe.push(current_player_owe)
+		end
+		final_owe
 	end
 end
