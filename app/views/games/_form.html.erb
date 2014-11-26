@@ -2,7 +2,12 @@
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-heart"></i></span>
-	  <%= f.text_field :nickname, placeholder: "Nickname for Game (Optional)", class: "form-control no-border-radius"  %>
+	  <%= f.text_field :nickname, placeholder: "Nickname for Game (Optional)", class: "form-control no-border-radius" %>
+  </div>
+
+  <div class="input-group col-xs-10 col-sm-7 input-player">
+  	<span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+	  <%= f.number_field :amount, placeholder: "Amount per card", step: "0.01", class: "form-control no-border-radius" %>
   </div>
 	
   <div class="input-group col-xs-10 col-sm-7 input-player">
@@ -14,7 +19,6 @@
   	<span class="input-group-addon"><i class="fa fa-user"></i></span>
 	  <%= f.text_field :player2, placeholder: "Player 2", class: "form-control no-border-radius"  %>
   </div>
-
 
   <div class="input-group col-xs-10 col-sm-7 input-player">
   	<span class="input-group-addon"><i class="fa fa-user"></i></span>
