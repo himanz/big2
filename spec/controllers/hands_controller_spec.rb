@@ -75,7 +75,7 @@ RSpec.describe HandsController, :type => :controller do
 
   		it "re-renders the :new template" do
   			post :create, game_id: @game, hand: attributes_for(:hand_invalid)
-  			expect(response).to render_template :new
+  			expect(response).to redirect_to @game
   		end
   	end
   end

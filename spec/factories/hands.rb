@@ -18,7 +18,7 @@ FactoryGirl.define do
 		end
 
 		factory :hand_invalid do
-			score1 14
+			score1 -1
 		end
   end
 

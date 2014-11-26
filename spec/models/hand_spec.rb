@@ -12,8 +12,8 @@ RSpec.describe Hand, :type => :model do
     expect(hand.errors[:score1].size).to eq(1)  	
   end
 
-  it "is invalid if score1 is over 13 " do
-  	hand = Hand.new(score1: 14, score2: 13, score3: 0, score4: 1)
+  it "is invalid if score1 is over 65 " do
+  	hand = Hand.new(score1: 66, score2: 13, score3: 0, score4: 1)
     expect(hand.valid?).to be_falsey
     expect(hand.errors[:score1].size).to eq(1)
   end
