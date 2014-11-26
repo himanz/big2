@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-	validates :player1, presence: true
+	validates :player1, :amount, presence: true
 	has_many :hands
 
 	def self.sort_by_recent

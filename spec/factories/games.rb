@@ -5,6 +5,7 @@ FactoryGirl.define do
     player2 "Peter"
     player3 "Pigpig"
     player4 "Julio"
+    amount "0.5"
 
     factory :game2 do
     	nickname "Game Second"
