@@ -8,6 +8,7 @@ class GamesController < ApplicationController
 	def show
 		@hands = @game.query_hands
 		@hand = Hand.new
+		@owe_array = @game.calculate_owe
 	end
 
 	def new

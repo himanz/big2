@@ -80,6 +80,34 @@
   </table>
 </div>
 
+
+<div class="table-responsive total-table total-owe">
+  <p>First column is person owing. Person owes the amount to others on the same row horizontally.</p>
+  <table class="table table-bordered">
+    <caption class="total-title">Total Owing</caption>
+    <thead>
+      <tr>
+        <th><%= "Player \\ Player Owed" %>
+        <th><%= @game.player1 %></th>
+        <th><%= @game.player2 %></th>
+        <th><%= @game.player3 %></th>
+        <th><%= @game.player4 %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% player_names = [@game.player1, @game.player2, @game.player3, @game.player4] %>
+      <% for i in 0..((@owe_array.length)-1) %>
+        <tr>
+          <th><%= player_names[i] %></th>
+        <% for j in 0..((@owe_array.length)-1) %> 
+          <th><%= @owe_array[i][j] %></th>
+        <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
 <div class="input-group col-xs-10 col-sm-7 col-xs-offset-4 col-sm-offset-5">
   <%= button_tag "Toggle Total", class: "btn btn-lg btn-primary total-button" %>
 </div>
