@@ -22,6 +22,14 @@ class Game < ActiveRecord::Base
     end
 	end
 
+	def total_score_all_players
+		score_array = []
+		for i in 1..4
+			score_array << total_score(i)
+		end
+		score_array
+	end
+
 	def check_no_player_name
 		if player1 == ""
 			self.player1 = "Player 1"

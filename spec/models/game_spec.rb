@@ -21,4 +21,10 @@ RSpec.describe Game, :type => :model do
   	game = create(:game_with_hands)
   	expect(game.total_score(1)).to eq(15)
   end
+
+  it "returns array of total score of all players" do
+  	game = create(:game_with_hands)
+  	score_array = game.total_score_all_players
+  	expect(score_array).to eq([15, 5, 11, 13])
+  end
 end

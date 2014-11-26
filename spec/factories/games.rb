@@ -13,8 +13,8 @@ FactoryGirl.define do
 
     factory :game_with_hands do
     	after(:create) do |game|
-    		create(:hand, score1: 5, game_id: game.id)
-        create(:hand, score1: 10, game_id: game.id)
+    		create(:hand, score1: 5, score2: 5, score3: 10, score4: 0, game_id: game.id)
+        create(:hand, score1: 10, score2: 0, score3: 1, score4: 13, game_id: game.id)
     	end
     end
   end
